@@ -1,0 +1,734 @@
+:root {
+    --primary-color: #A59833;
+    --secondary-color: #F0F2E2;
+    --text-color: #40492D;
+    --hover-color: #8C7D1C;
+}
+
+body {
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Top bar style starts here*/
+.top-bar {
+    background-color: var(--primary-color);
+    color: #fff;
+    font-size: 14px;
+    padding: 8px 20px;
+    display: flex;
+    justify-content: flex-start; 
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    font-family: 'Inter', sans-serif;
+}
+.top-bar > div:first-child {
+    flex: 1;
+    text-align: center;
+    margin-left: -60px; 
+}
+
+.top-bar a {
+    color: #40492d;
+    text-decoration: none;
+    margin-left: 25px;
+    transition: color 0.3s ease;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+}
+
+.top-bar a:hover {
+    color: #FFF;
+}
+/* Top bar style ends here*/
+
+/* Header styles starts here */
+.header {
+    background-color: var(--secondary-color);
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.logo img {
+    height: 100px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover img {
+    transform: scale(1.05);
+}
+
+/* Navigation */
+.nav {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    position: relative;
+    padding: 5px 0;
+    transition: all 0.3s ease;
+    font-family: 'Inter', sans-serif;
+}
+
+.nav a::after {
+    content: "↓";
+    font-size: 10px;
+    margin-left: 8px;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.nav a:hover {
+    color: var(--primary-color);
+}
+
+.nav a:hover::after {
+    opacity: 1;
+}
+
+.nav a:last-child::after {
+    content: none;
+}
+
+/* Underline animation */
+.nav a::before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.nav a:hover::before {
+    width: 100%;
+}
+/* Header style ends here */
+
+/* Hero section styles starts here */
+.hero-section {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.hero-container {
+    position: relative;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+    position: relative;
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.hero-image {
+    width: 100%;
+    height: 600px;
+    object-fit: cover; 
+    display: block;
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Keep this for centering */
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-family: "Oswald", sans-serif;
+    font-size: 3rem;
+}
+
+.hero-text h1 {
+    margin-bottom: 1rem;
+    font-family: "Oswald", sans-serif;
+}
+/* hero section styles ends here */
+
+/* after hero section starts here  */
+.centered-section {
+    background-color: var(--secondary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+    text-align: center;
+    
+}
+
+.centered-section p {
+    max-width: 800px;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color:#717c5b;
+    font-family: 'Montserrat', sans-serif;
+    /* font-weight: 500; */
+}
+
+.small-image {
+    width: 250px; /* Adjust the width as needed */
+    height: auto;
+}
+/* after hero section ends here  */
+
+/* our story section starts here  */
+.our-story-section {
+    background-color: var(--secondary-color);
+    padding: 50px 20px;
+    text-align: center;
+    /* font-family: 'Arial', sans-serif; */
+}
+
+.our-story-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text-color);
+}
+
+.story-images {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.story-image {
+    width: 30%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.story-image:first-child {
+    transform: rotate(-5deg);
+    margin-left: 2px;
+}
+
+.story-image:last-child {
+    transform: rotate(5deg);
+}
+
+.story-image:nth-child(2) {
+    transform: rotate(5deg);
+}
+
+.story-text {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color:#717c5b;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* our story section starts here  */
+
+/* mammoty section starts here  */
+.testimonial {
+    background-color: var(--secondary-color);
+    padding: 50px 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.testimonial-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 900px;
+    gap: 30px;
+}
+
+.testimonial-image img {
+    max-width: 349px;
+    border-radius: 10px;
+}
+
+.testimonial-text {
+    max-width: 500px;
+    color: #a69933; /* Golden-yellow text */
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+}
+
+.testimonial-text h3 {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+.signature {
+    display: block;
+    margin: 15px 0;
+    max-width: 120px;
+}
+
+.testimonial-author {
+    font-size: 16px;
+    color: #a69933;
+}
+
+.testimonial-divider {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: absolute;
+    margin-top: 221px;
+}
+/* mammoty section ends here  */
+
+/* ayurveda section starts here  */
+.ayurveda-section {
+    background-color: var(--secondary-color);
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.ayurveda-content {
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text-color);
+}
+
+.ayurveda-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text-color);
+}
+
+.ayurveda-image {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    margin: 20px 0;
+    border-radius: 10px;
+}
+
+.ayurveda-content p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color:#717c5b;
+}
+/* ayurveda section ends here  */
+
+/* product section starts here */
+.products-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 20px;
+    background-color: var(--secondary-color);
+}
+
+.product {
+    position: relative;
+    width: 50%;
+    overflow: hidden;
+}
+
+.product-image {
+    width: 70%;
+    height: 50%;
+    transition: transform 0.5s ease-in-out;
+    margin-left: 84px;
+}
+
+.product-button {
+    position: absolute;
+    bottom: 20px;
+    left: 46%;
+    transform: translateX(-50%);
+    background-color: var(--primary-color);
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.product-button button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.product-button button a {
+    color: white;
+    text-decoration: none;
+}
+
+.product-description {
+    width: 33%;
+    padding: 20px;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text-color);
+}
+
+.product-description h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
+    color: #a69933;
+}
+
+.product-description p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color:#717c5b;
+}
+/* product section ends here */
+
+/* features section starts here */
+.features-section {
+    background-color: var(--secondary-color);
+    padding: 40px 5%;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.features-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.feature-box {
+    flex: 1;
+    min-width: 300px;
+    text-align: left;
+}
+
+.feature-box h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: #a69933;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.feature-box ul {
+    list-style: none;
+    padding: 0;
+    color:#717c5b;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.button-container {
+    margin-top: 20px;
+}
+
+.buy-now {
+    background-color: #A69933; /* Button color */
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.buy-now:hover {
+    background-color: #8C822A;
+}
+/* features section ends here */
+
+/* outlet section starts here */
+.outlet-section {
+    background-color: var(--secondary-color);
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.outlet-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text-color);
+}
+
+.outlet-image {
+    width: 80%;
+    height: auto;
+    margin: 20px 0;
+    border-radius: 10px;
+}
+
+.outlet-section p {
+    max-width: 800px;
+    margin: 0 auto 20px;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color:#717c5b;
+    font-family: 'Montserrat', sans-serif;
+}
+/* outlet section ends here */
+
+/* contact section starts here */
+.contact-section {
+    background-color: #A69933; /* Background color */
+    padding: 50px 5%;
+}
+
+.contact-container {
+    flex-wrap: wrap;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.contact-text {
+    flex: 1;
+    min-width: 300px;
+    color: var(--text-color);
+    font-size: 24px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.contact-form {
+    flex: 2;
+    min-width: 300px;
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.form-left, .form-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 20px;
+    font-weight: 500;
+    color: #fff;
+    margin-top: 10px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+input {
+    background: none;
+    border: none;
+    border-bottom: 1px solid #666;
+    padding: 8px 0;
+    font-size: 16px;
+    color: #fff;
+    outline: none;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.send-button {
+    background: none;
+    border: none;
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--text-color);
+    cursor: pointer;
+    margin-top: 20px;
+    text-align: left;
+    position: relative;
+    display: inline-block;
+}
+
+.send-button::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    display: block;
+    margin-top: 5px;
+    right: 0;
+    background: var(--text-color);
+    transition: width 0.4s ease, right 0.4s ease;
+}
+
+.send-button:hover::after {
+    width: 100%;
+    right: 0;
+}
+/* contact section ends here */
+
+/* footer section starts here */
+.footer {
+    background-color: #717c5b; /* Matching background color */
+    padding: 50px 0;
+    color: #fff;
+    text-align: left; /* Align text to the left */
+}
+
+.footer-container {
+    padding: 20px 40px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 30px;
+}
+
+.social-link {
+    font-size: 24px;
+    color: #fff;
+    text-decoration: none;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.social-link:hover {
+    opacity: 0.7;
+}
+
+.footer-divider {
+    width: 100%;
+    height: 1px;
+    background: #fff;
+    margin: 20px 0;
+}
+
+/* Add a second footer divider */
+.footer-divider-second {
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    margin: 80px 0;
+    border-radius: 1px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 50px;
+    flex-wrap: wrap;
+    margin-left: 40px;
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    position: relative;
+}
+
+.footer-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    display: block;
+    bottom: -2px;
+    left: 0;
+    background: #fff;
+    transition: width 0.4s ease;
+}
+
+.footer-links a:hover::after {
+    width: 100%;
+}
+
+/* footer section ends here */
+
+
+/* media query starts here  */
+@media (max-width: 768px) {
+    .header {
+        padding: 15px 20px;
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+    
+    .top-bar {
+        padding: 8px 15px;
+        font-size: 12px;
+    }
+    
+    .top-bar a {
+        margin-left: 15px;
+    }
+    .hero-image {
+        height: 400px;
+    }
+    
+    .hero-text h1 {
+        font-size: 10px;
+    }
+    .testimonial-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .testimonial-text {
+        max-width: 100%;
+        text-align: center;
+    }
+    .testimonial-divider{
+        display: none;
+    }
+    .contact-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    form {
+        flex-direction: column;
+        align-items: center;
+    }
+    .send-button {
+        text-align: center;
+    }
+    .footer-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .testimonial {
+        padding: 30px 5%;
+    }
+
+    .testimonial-text h3 {
+        font-size: 18px;
+    }
+
+    .testimonial-author {
+        font-size: 14px;
+    }
+    .testimonial-divider{
+        display: none;
+    }
+
+}
+/* media query ends here  */
