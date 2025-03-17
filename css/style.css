@@ -1,3 +1,5 @@
+@import url('synonym.css');
+
 :root {
     --primary-color: #A59833;
     --secondary-color: #F0F2E2;
@@ -339,75 +341,94 @@ body {
 
 /* product section starts here */
 .products-section {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     padding: 50px 20px;
     background-color: var(--secondary-color);
 }
 
-.our-products {
-    font-size: 2.5em;
-    color: var(--text-color);
-    text-align: center;
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.tab-link {
+    background-color: #A59833;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
     font-family: 'Montserrat', sans-serif;
-    background-color: var(--secondary-color);
+    font-size: 1em;
+    margin: 0 5px;
+    transition: background-color 0.3s ease;
+}
+
+.tab-link.active {
+    background-color: #cfbe3b;
+}
+
+.tab-link:hover {
+    background-color: #9a8d28;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
 }
 
 .product {
-    position: relative;
-    width: 50%;
-    overflow: hidden;
+    text-align: center;
 }
 
 .product-image {
-    width: 70%;
-    height: 50%;
-    transition: transform 0.5s ease-in-out;
-    margin-left: 84px;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
 }
 
 .product-button {
-    position: absolute;
-    bottom: 20px;
-    left: 46%;
-    transform: translateX(-50%);
-    background-color: var(--primary-color);
-    padding: 10px 20px;
-    border-radius: 5px;
+    margin-top: 10px;
 }
 
 .product-button button {
-    background: none;
+    background-color: #A59833;
+    color: #fff;
     border: none;
-    color: white;
-    font-size: 1rem;
+    padding: 10px 20px;
+    border-radius: 5px;
     cursor: pointer;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1em;
 }
 
 .product-button button a {
-    color: white;
+    color: #fff;
     text-decoration: none;
 }
 
 .product-description {
-    width: 33%;
-    padding: 20px;
-    font-family: 'Montserrat', sans-serif;
-    color: var(--text-color);
+    margin-top: 20px;
+    text-align: left;
+    max-width: 600px;
+    margin: 20px auto;
 }
 
 .product-description h1 {
-    font-size: 2rem;
-    margin-bottom: 20px;
+    font-size: 1.5em;
+    color: #A59833;
+    margin-bottom: 10px;
     font-family: 'Montserrat', sans-serif;
-    color: #a69933;
 }
 
 .product-description p {
-    font-size: 1.2rem;
+    font-size: 1em;
+    color: #717c5b;
     line-height: 1.6;
-    color:#717c5b;
+    font-family: 'Open Sans', sans-serif;
 }
 /* product section ends here */
 
@@ -666,7 +687,7 @@ input {
 
 
 /* media query starts here  */
-/* Add this to existing media queries section */
+/* Large screens */
 @media (max-width: 1200px) {
     .nav {
         gap: 20px;
@@ -675,8 +696,13 @@ input {
     .hero-text {
         font-size: 2.5rem;
     }
+    
+    .testimonial-content {
+        max-width: 800px;
+    }
 }
 
+/* Medium screens */
 @media (max-width: 992px) {
     .header {
         padding: 15px 30px;
@@ -691,46 +717,76 @@ input {
         padding: 0 20px;
     }
     
-    .products-section {
-        flex-direction: column;
-        text-align: center;
+    .story-images {
+        flex-wrap: wrap;
+        justify-content: center;
     }
     
-    .product {
-        width: 100%;
-        margin: 0 auto;
+    .story-image {
+        width: 45%;
+        margin: 10px;
+    }
+    
+    .testimonial-content {
+        gap: 20px;
+    }
+    
+    .testimonial-image img {
+        max-width: 379px;
+        height: 266px;
+    }
+    
+    .testimonial-divider {
+        margin-top: 240px;
     }
     
     .product-image {
-        width: 70%;
-        height: auto;
-        margin: 0 auto;
-        display: block;
-    }
-    
-    .product-button {
-        position: relative;
-        bottom: auto;
-        left: auto;
-        transform: none;
-        margin: 20px 0;
+        max-width: 250px;
     }
     
     .product-description {
-        width: 90%;
-        padding: 20px 0;
+        padding: 0 20px;
     }
 }
 
+/* Tablets */
 @media (max-width: 768px) {
     .header {
-        padding: 15px 20px;
+        padding: 10px 20px;
     }
     
+    /* Mobile navigation */
     .nav {
-        gap: 15px;
-        flex-wrap: wrap;
-        justify-content: center;
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--secondary-color);
+        padding: 15px 20px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        z-index: 100;
+    }
+    
+    .nav.active {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 0;
+    }
+    
+    .nav a {
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(0,0,0,0.1);
+        width: 100%;
+        text-align: center;
+    }
+    
+    .mobile-menu-toggle {
+        display: block;
+        font-size: 24px;
+        color: var(--text-color);
+        cursor: pointer;
     }
     
     .hero-image {
@@ -739,6 +795,12 @@ input {
     
     .hero-text {
         font-size: 1.75rem;
+        width: 90%;
+    }
+    
+    .centered-section p {
+        font-size: 1.1rem;
+        padding: 0 20px;
     }
     
     .story-images {
@@ -747,8 +809,16 @@ input {
     }
     
     .story-image {
-        width: 80%;
+        width: 70%;
         margin: 10px 0;
+    }
+    
+    .story-text {
+        padding: 0 20px;
+    }
+    
+    .testimonial {
+        padding: 40px 20px;
     }
     
     .testimonial-content {
@@ -757,37 +827,76 @@ input {
     }
     
     .testimonial-image {
-        margin-bottom: 30px;
+        margin-bottom: 20px;
+    }
+    
+    .testimonial-divider {
+        margin-top: 171px;
+    }
+    .signature{
+        margin-left: 190px;
+    }
+    
+    .ayurveda-content h1 {
+        font-size: 2rem;
+        padding: 0 15px;
+    }
+    
+    .ayurveda-content p {
+        padding: 0 15px;
+    }
+    
+    .tabs {
+        flex-wrap: wrap;
+    }
+    
+    .tab-link {
+        margin: 5px;
     }
     
     .features-container {
         flex-direction: column;
     }
     
+    .feature-box {
+        margin-bottom: 30px;
+    }
+    
+    .outlet-section h1 {
+        font-size: 2rem;
+        padding: 0 15px;
+    }
+    
+    .outlet-section p {
+        padding: 0 15px;
+    }
+    
     .contact-container {
+        display: flex;
         flex-direction: column;
+    }
+    
+    .contact-text {
+        margin-bottom: 30px;
+        text-align: center;
+    }
+    
+    form {
+        flex-direction: column;
+        gap: 15px;
     }
     
     .form-left, .form-right {
         width: 100%;
     }
-    .products-section {
-        padding: 30px 15px;
-    }
     
-    .product-image {
-        width: 85%;
-    }
-    
-    .product-description h1 {
-        font-size: 1.8rem;
-    }
-    
-    .product-description p {
-        font-size: 1rem;
+    .send-button {
+        margin-top: 20px;
+        align-self: flex-start;
     }
 }
 
+/* Small tablets and large phones */
 @media (max-width: 576px) {
     .top-bar {
         flex-direction: column;
@@ -799,40 +908,46 @@ input {
         margin: 0 0 10px 0;
     }
     
-    .header {
-        padding: 15px 10px;
-    }
-    
     .logo img {
-        height: 80px;
-    }
-    
-    .nav {
-        gap: 10px;
-    }
-    
-    .nav a {
-        font-size: 13px;
+        height: 70px;
+        margin-left: 200px;
     }
     
     .hero-image {
-        height: 300px;
+        height: 350px;
     }
     
     .hero-text {
         font-size: 1.5rem;
+        width: 95%;
+    }
+    
+    .centered-section {
+        padding: 30px 10px;
     }
     
     .centered-section p {
         font-size: 1rem;
     }
     
+    .small-image {
+        width: 150px;
+    }
+    
     .our-story-section h2 {
         font-size: 2rem;
     }
     
-    .testimonial {
-        padding: 30px 20px;
+    .story-image {
+        width: 80%;
+    }
+    
+    .story-text {
+        font-size: 1rem;
+    }
+    
+    .testimonial-image img {
+        max-width: 250px;
     }
     
     .testimonial-text h3 {
@@ -840,132 +955,234 @@ input {
     }
     
     .ayurveda-content h1 {
-        font-size: 2rem;
+        font-size: 1.75rem;
+    }
+    
+    .ayurveda-content p {
+        font-size: 1rem;
+    }
+    
+    .tab-link {
+        padding: 8px 12px;
+        font-size: 0.9em;
     }
     
     .product-image {
-        width: 90%;
-        margin-left: 5%;
+        max-width: 200px;
     }
     
-    .product-button {
-        left: 50%;
-        transform: translateX(-50%);
+    .product-description h1 {
+        font-size: 1.4rem;
+    }
+    
+    .footer-container {
+        padding: 20px;
+    }
+    
+    .social-icons {
+        justify-content: center;
     }
     
     .footer-links {
-        flex-direction: column;
-        text-align: center;
-        gap: 15px;
+        justify-content: center;
+        margin-left: 0;
     }
 }
 
-/* Add these new responsive styles */
+/* Mobile phones */
 @media (max-width: 480px) {
-    .hero-text {
-        font-size: 1.2rem;
-        top: 40%;
-        padding: 0 10px;
+    .header {
+        padding: 10px 15px;
+    }
+    
+    .top-bar a {
+        margin-left: 15px;
+    }
+    
+    .logo img {
+        height: 60px;
+        margin-left: 120px;
+       
     }
     
     .hero-image {
         height: 300px;
     }
     
+    .hero-text {
+        font-size: 1.2rem;
+        top: 50%;
+        padding: 0 10px;
+    }
+    
+    .centered-section p {
+        font-size: 0.9rem;
+    }
+    
+    .our-story-section h2 {
+        font-size: 1.75rem;
+    }
+    
     .story-image {
-        width: 100%;
+        width: 90%;
+    }
+    
+    .story-text {
+        font-size: 0.9rem;
+    }
+    
+    .testimonial {
+        padding: 30px 15px;
     }
     
     .testimonial-image img {
-        max-width: 250px;
+        max-width: 200px;
     }
     
-    .contact-text h2 {
-        font-size: 1.8rem;
+    .testimonial-text h3 {
+        font-size: 1rem;
     }
-    .product-image {
-        width: 100%;
+    .testimonial-divider{
+        margin-top: 259px;
     }
     
-    .product-description h1 {
+    .signature {
+        margin: 10px auto;
+        max-width: 100px;
+    }
+    
+    .ayurveda-content h1 {
         font-size: 1.5rem;
     }
     
-    .product-button button {
+    .ayurveda-content p {
         font-size: 0.9rem;
-        padding: 8px 16px;
     }
-    .footer {
-        padding: 30px 0;
+    
+    .tabs {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5px;
+    }
+    
+    .tab-link {
+        margin: 0;
+        font-size: 0.8em;
+    }
+    
+    .product-image {
+        max-width: 180px;
+    }
+    
+    .product-description h1 {
+        font-size: 1.2rem;
+    }
+    
+    .product-description p {
+        font-size: 0.9rem;
+    }
+    
+    .feature-box h3 {
+        font-size: 1.2rem;
+    }
+    
+    .feature-box ul {
+        font-size: 0.9rem;
+    }
+    
+    .outlet-section h1 {
+        font-size: 1.5rem;
+    }
+    
+    .outlet-section p {
+        font-size: 0.9rem;
+    }
+    
+    .contact-text h2 {
+        font-size: 1.6rem;
+    }
+    
+    label {
+        font-size: 16px;
+    }
+    
+    input {
+        font-size: 14px;
+    }
+    
+    .send-button {
+        font-size: 16px;
+    }
+    
+    .footer-links {
+        gap: 20px;
+    }
+    
+    .footer-links a {
+        font-size: 12px;
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 375px) {
+    .top-bar {
+        font-size: 12px;
+    }
+    
+    .logo img {
+        height: 50px;
+        margin-right: 100px;
+    }
+    
+    .hero-image {
+        height: 250px;
+    }
+    
+    .hero-text {
+        font-size: 1rem;
+    }
+    
+    .tabs {
+        flex-direction: column;
+    }
+    
+    .tab-link {
+        margin: 2px 0;
+        width: 100%;
+    }
+    
+    .product-image {
+        max-width: 150px;
+    }
+    
+    .product-button button {
+        padding: 8px 16px;
+        font-size: 0.9em;
+    }
+    
+    .buy-now {
+        padding: 10px 18px;
+        font-size: 14px;
+    }
+    
+    .contact-text h2 {
+        font-size: 1.4rem;
     }
     
     .social-icons {
-        justify-content: center;
+        gap: 20px;
+    }
+    
+    .social-link {
+        font-size: 20px;
     }
 }
 
-/* Mobile-first adjustments */
-@media (min-width: 769px) {
-    .mobile-only {
-        display: none !important;
-    }
-}
 
-@media (max-width: 768px) {
-    .desktop-only {
-        display: none !important;
-    }
-    
-    .nav {
-        display: none;
-    }
-    
-    .mobile-menu-toggle {
-        display: block;
-        font-size: 24px;
-        color: var(--text-color);
-        cursor: pointer;
-    }
-    
-    .nav.active {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        margin-top: 15px;
-    }
-}
 
 /* Add hamburger menu */
 .mobile-menu-toggle {
     display: none;
-}
-
-@media (max-width: 768px) {
-    .mobile-menu-toggle {
-        display: block;
-    }
-    
-    .header {
-        position: relative;
-    }
-    
-    .nav {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background-color: var(--secondary-color);
-        padding: 15px 20px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        display: none;
-    }
-    
-    .nav a {
-        padding: 10px 0;
-        border-bottom: 1px solid rgba(0,0,0,0.1);
-        width: 100%;
-        text-align: center;
-    }
 }
 
 /* Ensure images are responsive */
@@ -974,31 +1191,3 @@ img {
     height: auto;
 }
 
-/* Form responsiveness */
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    box-sizing: border-box;
-}
-
-/* Adjust feature boxes */
-@media (max-width: 768px) {
-    .feature-box {
-        margin-bottom: 30px;
-    }
-}
-
-/* Product section mobile fix */
-@media (max-width: 768px) {
-    .products-section {
-        padding: 30px 15px;
-    }
-    
-    .product-button {
-        position: relative;
-        bottom: auto;
-        left: auto;
-        transform: none;
-        margin: 20px 0;
-    }
-}

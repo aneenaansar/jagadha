@@ -1,185 +1,4 @@
-// Enhanced Carousel Animation
 
-document.addEventListener('DOMContentLoaded', () => {
-    const carousel = document.querySelector('.carousel');
-    if (!carousel) return;
-  
-    const slides = carousel.querySelectorAll('.carousel-slide');
-    const totalSlides = slides.length;
-    let currentSlide = 0;
-    let isAnimating = false;
-    
-    // Create navigation dots
-    const dotsContainer = document.createElement('div');
-    dotsContainer.className = 'carousel-dots';
-    carousel.appendChild(dotsContainer);
-    
-    // Add styles for carousel navigation
-    const dotStyle = document.createElement('style');
-    dotStyle.textContent = `
-      .carousel {
-        position: relative;
-      }
-      
-      .carousel-slide {
-        opacity: 0;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        transition: opacity 1s ease-in-out, transform 1s ease-in-out;
-        transform: scale(1.05);
-      }
-      
-      .carousel-slide.active {
-        opacity: 1;
-        position: relative;
-        transform: scale(1);
-      }
-      
-      .carousel-dots {
-        position: absolute;
-        bottom: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-        display: flex;
-        gap: 10px;
-        z-index: 10;
-      }
-      
-      .carousel-dot {
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        background-color: rgba(255, 255, 255, 0.5);
-        cursor: pointer;
-        transition: all 0.3s ease;
-      }
-      
-      .carousel-dot.active {
-        background-color: white;
-        box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
-        transform: scale(1.2);
-      }
-      
-      .carousel-arrow {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 40px;
-        height: 40px;
-        background-color: rgba(255, 255, 255, 0.3);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        z-index: 10;
-        transition: background-color 0.3s ease;
-      }
-      
-      .carousel-arrow:hover {
-        background-color: rgba(255, 255, 255, 0.5);
-      }
-      
-      .carousel-arrow-left {
-        left: 20px;
-      }
-      
-      .carousel-arrow-right {
-        right: 20px;
-      }
-      
-      .carousel-arrow:before {
-        content: '';
-        border: solid white;
-        border-width: 0 3px 3px 0;
-        display: inline-block;
-        padding: 6px;
-      }
-      
-      .carousel-arrow-left:before {
-        transform: rotate(135deg);
-        margin-left: 5px;
-      }
-      
-      .carousel-arrow-right:before {
-        transform: rotate(-45deg);
-        margin-right: 5px;
-      }
-    `;
-    document.head.appendChild(dotStyle);
-    
-    // Create navigation arrows
-    const leftArrow = document.createElement('div');
-    leftArrow.className = 'carousel-arrow carousel-arrow-left';
-    carousel.appendChild(leftArrow);
-    
-    const rightArrow = document.createElement('div');
-    rightArrow.className = 'carousel-arrow carousel-arrow-right';
-    carousel.appendChild(rightArrow);
-    
-    // Initialize the carousel
-    const initCarousel = () => {
-      // Create dots
-      slides.forEach((_, index) => {
-        const dot = document.createElement('div');
-        dot.className = 'carousel-dot';
-        if (index === 0) dot.classList.add('active');
-        
-        dot.addEventListener('click', () => {
-          if (isAnimating || currentSlide === index) return;
-          goToSlide(index);
-        });
-        
-        dotsContainer.appendChild(dot);
-      });
-      
-      // Set initial slide
-      slides.forEach((slide, index) => {
-        slide.classList.toggle('active', index === currentSlide);
-    });
-
-    // Add arrow event listeners
-    leftArrow.addEventListener('click', () => {
-      if (isAnimating) return;
-      const newIndex = (currentSlide - 1 + totalSlides) % totalSlides;
-      goToSlide(newIndex);
-    });
-
-    rightArrow.addEventListener('click', () => {
-      if (isAnimating) return;
-      const newIndex = (currentSlide + 1) % totalSlides;
-      goToSlide(newIndex);
-    });
-  };
-
-  const goToSlide = (newIndex) => {
-    if (isAnimating || currentSlide === newIndex) return;
-    isAnimating = true;
-
-    const dots = dotsContainer.querySelectorAll('.carousel-dot');
-    dots[currentSlide].classList.remove('active');
-    dots[newIndex].classList.add('active');
-
-    slides[currentSlide].classList.remove('active');
-    slides[newIndex].classList.add('active');
-
-    slides[newIndex].addEventListener('transitionend', () => {
-      isAnimating = false;
-    }, { once: true });
-
-    currentSlide = newIndex;
-  };
-
-  // Initialize the carousel
-  initCarousel();
-
-  // Optional auto-advance every 5 seconds
-  // setInterval(() => {
-  //   goToSlide((currentSlide + 1) % totalSlides);
-  // }, 5000);
-});
 
 
 // Scroll Animation Script for Jagadha Website
@@ -481,3 +300,41 @@ document.addEventListener('DOMContentLoaded', () => {
     // Trigger animations for elements in view on page load
     setTimeout(triggerAnimationsInView, 100);
   });
+
+
+  // Add this to your existing script.js file
+document.addEventListener('DOMContentLoaded', () => {
+  const tabLinks = document.querySelectorAll('.tab-link');
+  const tabContents = document.querySelectorAll('.tab-content');
+
+  tabLinks.forEach(link => {
+      link.addEventListener('click', () => {
+          const tabId = link.getAttribute('data-tab');
+
+          tabLinks.forEach(link => link.classList.remove('active'));
+          tabContents.forEach(content => content.classList.remove('active'));
+
+          link.classList.add('active');
+          document.getElementById(tabId).classList.add('active');
+      });
+  });
+});
+
+/* JavaScript for mobile menu toggle */
+
+// Add this to your JavaScript file
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuToggle = document.createElement('div');
+    mobileMenuToggle.className = 'mobile-menu-toggle';
+    mobileMenuToggle.innerHTML = '☰';
+    
+    const header = document.querySelector('.header');
+    const nav = document.querySelector('.nav');
+    
+    header.insertBefore(mobileMenuToggle, nav);
+    
+    mobileMenuToggle.addEventListener('click', function() {
+        nav.classList.toggle('active');
+        this.innerHTML = nav.classList.contains('active') ? '✕' : '☰';
+    });
+});

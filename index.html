@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jagadha</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans:wght@400;500&display=swap&family=Roboto:ital,wght@0,100..900;1,100..900" rel="stylesheet">
@@ -43,18 +43,6 @@
                 <img src="./assets/hero_image.png" alt="Hero Image 1" class="hero-image">
                 <div class="hero-text ">
                     <p>Results-driven skin and hair care through Ayurveda.</p>
-                </div>
-            </div>
-            <div class="carousel-slide">
-                <img src="https://plus.unsplash.com/premium_photo-1675342786681-e33a19414cfd?q=80&w=2090&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Hero Image 2" class="hero-image">
-                <div class="hero-text">
-                    <p>Discover the power of natural ingredients.</p>
-                </div>
-            </div>
-            <div class="carousel-slide">
-                <img src="https://images.unsplash.com/photo-1595971348132-009effb2a9b3?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Hero Image 3" class="hero-image">
-                <div class="hero-text">
-                    <p>Transform your routine with our products.</p>
                 </div>
             </div>
         </div>
@@ -135,11 +123,14 @@
     <!-- Ayurveda section ends here -->
 
     <!-- products section starts here  -->
-    <section >
-        <div class="our-products">
-            <h1>Our products</h1>
+    <section class="products-section">
+        <div class="tabs">
+            <button class="tab-link active" data-tab="product1">AGNIJITH</button>
+            <button class="tab-link" data-tab="product2">AGNIHARI</button>
+            <button class="tab-link" data-tab="product3">KADAMBINI</button>
+            <button class="tab-link" data-tab="product4">KASHMIRINI</button>
         </div>
-        <div class="products-section">
+        <div class="tab-content active" id="product1">
             <div class="product">
                 <img src="./assets/product.png" alt="Product Image" class="product-image">
                 <div class="product-button">
@@ -149,6 +140,42 @@
             <div class="product-description">
                 <h1>Experience the transformative power of Agnijith and rediscover smooth, scar-free skin.</h1>
                 <p>Experience the power of Ayurveda with Agnijith—a luxurious daily rejuvenating cream designed to nourish, protect, and revitalize your skin. This time-tested formula helps restore your skin's natural glow while shielding it from environmental stressors. Regular use promotes a smooth, scar-free complexion, making it an essential addition to your skincare routine.</p>
+            </div>
+        </div>
+        <div class="tab-content" id="product2">
+            <div class="product">
+                <img src="./assets/product2.png" alt="Product Image" class="product-image">
+                <div class="product-button">
+                    <button><a href="#">ADD TO CART</a></button>
+                </div>
+            </div>
+            <div class="product-description">
+                <h1>Product 2 Description</h1>
+                <p>Details about Product 2.</p>
+            </div>
+        </div>
+        <div class="tab-content" id="product3">
+            <div class="product">
+                <img src="./assets/product3.png" alt="Product Image" class="product-image">
+                <div class="product-button">
+                    <button><a href="#">ADD TO CART</a></button>
+                </div>
+            </div>
+            <div class="product-description">
+                <h1>Product 3 Description</h1>
+                <p>Details about Product 3.</p>
+            </div>
+        </div>
+        <div class="tab-content" id="product4">
+            <div class="product">
+                <img src="./assets/product4.png" alt="Product Image" class="product-image">
+                <div class="product-button">
+                    <button><a href="#">ADD TO CART</a></button>
+                </div>
+            </div>
+            <div class="product-description">
+                <h1>Product 4 Description</h1>
+                <p>Details about Product 4</p>
             </div>
         </div>
     </section>
