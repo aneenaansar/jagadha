@@ -910,7 +910,7 @@ input {
     
     .logo img {
         height: 70px;
-        margin-left: 200px;
+        margin-left: 210px;
     }
     
     .hero-image {
@@ -946,9 +946,7 @@ input {
         font-size: 1rem;
     }
     
-    .testimonial-image img {
-        max-width: 250px;
-    }
+    
     
     .testimonial-text h3 {
         font-size: 1.1rem;
