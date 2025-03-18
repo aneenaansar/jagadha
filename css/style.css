@@ -1,5 +1,28 @@
 @import url('synonym.css');
 
+@font-face {
+    font-family: 'Synonym-Variable';
+    src: url('../fonts/Synonym-Variable.woff2') format('woff2'),
+         url('../fonts/Synonym-Variable.woff') format('woff'),
+         url('../fonts/Synonym-Variable.ttf') format('truetype');
+    font-weight: 200 700;
+    font-display: swap;
+    font-style: normal;
+  }
+
+  @font-face{
+    font-family: "Radikal W03 Regular";
+    src: url("605c1c612570275f24508913462da771.eot");
+    src: url("605c1c612570275f24508913462da771.eot?#iefix")format("embedded-opentype"),
+        url("605c1c612570275f24508913462da771.woff")format("woff"),
+        url("605c1c612570275f24508913462da771.woff2")format("woff2"),
+        url("605c1c612570275f24508913462da771.ttf")format("truetype"),
+        url("605c1c612570275f24508913462da771.svg#Radikal W03 Regular")format("svg");
+    font-weight:normal;
+    font-style:normal;
+    font-display:swap;
+}
+
 :root {
     --primary-color: #A59833;
     --secondary-color: #F0F2E2;
@@ -23,7 +46,7 @@ body {
     justify-content: flex-start; 
     align-items: center;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    font-family: 'Inter', sans-serif;
+    font-family: 'Synonym-Variable';
 }
 .top-bar > div:first-child {
     flex: 1;
@@ -37,7 +60,7 @@ body {
     margin-left: 25px;
     transition: color 0.3s ease;
     font-weight: 500;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Synonym-Variable';
 }
 
 .top-bar a:hover {
@@ -81,7 +104,7 @@ body {
     position: relative;
     padding: 5px 0;
     transition: all 0.3s ease;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Synonym-Variable';
 }
 
 .nav a::after {
@@ -158,13 +181,13 @@ body {
     color: white;
     padding: 10px;
     text-align: center;
-    font-family: "Oswald", sans-serif;
+    font-family: "Radikal W03 Regular";
     font-size: 3rem;
 }
 
 .hero-text h1 {
     margin-bottom: 1rem;
-    font-family: "Oswald", sans-serif;
+    font-family: "Radikal W03 Regular";
 }
 /* hero section styles ends here */
 
@@ -184,7 +207,7 @@ body {
     font-size: 1.2rem;
     line-height: 1.6;
     color:#717c5b;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Synonym-Variable';
     /* font-weight: 500; */
 }
 
@@ -199,13 +222,12 @@ body {
     background-color: var(--secondary-color);
     padding: 50px 20px;
     text-align: center;
-    /* font-family: 'Arial', sans-serif; */
 }
 
 .our-story-section h2 {
     font-size: 2.5rem;
     margin-bottom: 30px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Radikal W03 Regular";
     color: var(--text-color);
 }
 
@@ -240,7 +262,7 @@ body {
     font-size: 1.2rem;
     line-height: 1.6;
     color:#717c5b;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Synonym-Variable';
 }
 
 /* our story section starts here  */
@@ -270,7 +292,7 @@ body {
 .testimonial-text {
     max-width: 500px;
     color: #a69933; /* Golden-yellow text */
-    font-family: 'Inter', sans-serif;
+    font-family: 'Synonym-Variable';
     font-weight: 500;
 }
 
@@ -289,6 +311,7 @@ body {
 .testimonial-author {
     font-size: 16px;
     color: #a69933;
+    font-family: 'Synonym-Variable';
 }
 
 .testimonial-divider {
@@ -312,14 +335,13 @@ body {
 .ayurveda-content {
     max-width: 800px;
     margin: 0 auto;
-    font-family: 'Montserrat', sans-serif;
     color: var(--text-color);
 }
 
 .ayurveda-content h1 {
     font-size: 2.5rem;
     margin-bottom: 20px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Radikal W03 Regular";
     color: var(--text-color);
 }
 
@@ -336,6 +358,7 @@ body {
     line-height: 1.6;
     margin-bottom: 20px;
     color:#717c5b;
+    font-family: 'Synonym-Variable';
 }
 /* ayurveda section ends here  */
 
@@ -343,6 +366,14 @@ body {
 .products-section {
     padding: 50px 20px;
     background-color: var(--secondary-color);
+}
+
+.products-heading {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--text-color);
+    margin-bottom: 20px;
+    font-family: "Radikal W03 Regular";
 }
 
 .tabs {
@@ -357,7 +388,7 @@ body {
     border: none;
     padding: 10px 20px;
     cursor: pointer;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Radikal W03 Regular";
     font-size: 1em;
     margin: 0 5px;
     transition: background-color 0.3s ease;
@@ -401,7 +432,7 @@ body {
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
-    font-family: 'Open Sans', sans-serif;
+    font-family: "Radikal W03 Regular";
     font-size: 1em;
 }
 
@@ -413,22 +444,22 @@ body {
 .product-description {
     margin-top: 20px;
     text-align: left;
-    max-width: 600px;
+    max-width: 847px;
     margin: 20px auto;
 }
 
 .product-description h1 {
-    font-size: 1.5em;
+    font-size: 2.5rem;
     color: #A59833;
     margin-bottom: 10px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Radikal W03 Regular";
 }
 
 .product-description p {
-    font-size: 1em;
+    font-size: 1.2rem;
     color: #717c5b;
     line-height: 1.6;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Synonym-Variable';
 }
 /* product section ends here */
 
@@ -456,7 +487,7 @@ body {
 }
 
 .feature-box h3 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Radikal W03 Regular";
     color: #a69933;
     font-size: 20px;
     font-weight: bold;
@@ -468,7 +499,7 @@ body {
     padding: 0;
     color:#717c5b;
     font-size: 16px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Synonym-Variable';
 }
 
 .button-container {
@@ -501,7 +532,7 @@ body {
 .outlet-section h1 {
     font-size: 2.5rem;
     margin-bottom: 20px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Radikal W03 Regular";
     color: var(--text-color);
 }
 
@@ -518,7 +549,7 @@ body {
     font-size: 1.2rem;
     line-height: 1.6;
     color:#717c5b;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Synonym-Variable';
 }
 /* outlet section ends here */
 
@@ -539,7 +570,7 @@ body {
     min-width: 300px;
     color: var(--text-color);
     font-size: 24px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Radikal W03 Regular";
 }
 
 .contact-form {
@@ -564,7 +595,7 @@ label {
     font-weight: 500;
     color: #fff;
     margin-top: 10px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Synonym-Variable';
 }
 
 input {
@@ -575,7 +606,7 @@ input {
     font-size: 16px;
     color: #fff;
     outline: none;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Synonym-Variable';
 }
 
 .send-button {
@@ -658,6 +689,7 @@ input {
     gap: 50px;
     flex-wrap: wrap;
     margin-left: 40px;
+    font-family: 'Synonym-Variable';
 }
 
 .footer-links a {
