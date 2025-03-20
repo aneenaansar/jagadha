@@ -241,7 +241,6 @@ body {
 .story-image {
     width: 30%;
     height: auto;
-    border-radius: 10px;
 }
 
 .story-image:first-child {
@@ -602,7 +601,6 @@ body {
     width: 80%;
     height: auto;
     margin: 20px 0;
-    border-radius: 10px;
 }
 
 .outlet-section p {
