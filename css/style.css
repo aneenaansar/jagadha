@@ -108,7 +108,6 @@ body {
 }
 
 .nav a::after {
-    content: "↓";
     font-size: 10px;
     margin-left: 8px;
     opacity: 0.7;
@@ -183,6 +182,7 @@ body {
     text-align: center;
     font-family: "Radikal W03 Regular";
     font-size: 3rem;
+    line-height: 100%;
 }
 
 .hero-text h1 {
@@ -197,7 +197,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 50px 20px;
+    padding-top: 33px;
     text-align: center;
     
 }
@@ -214,19 +214,20 @@ body {
 .small-image {
     width: 250px; /* Adjust the width as needed */
     height: auto;
+    margin-top: 25px;
 }
 /* after hero section ends here  */
 
 /* our story section starts here  */
 .our-story-section {
     background-color: var(--secondary-color);
-    padding: 50px 20px;
+    padding: 0px 20px;
     text-align: center;
 }
 
 .our-story-section h2 {
     font-size: 2.5rem;
-    margin-bottom: 30px;
+    margin-bottom: 65px;
     font-family: "Radikal W03 Regular";
     color: var(--text-color);
 }
@@ -285,7 +286,7 @@ body {
 }
 
 .testimonial-image img {
-    max-width: 349px;
+    max-width: 473px;
     border-radius: 10px;
 }
 
@@ -315,20 +316,15 @@ body {
 }
 
 .testimonial-divider {
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
     position: absolute;
-    margin-top: 221px;
+    margin-top: 311px;
 }
 /* mammoty section ends here  */
 
 /* ayurveda section starts here  */
 .ayurveda-section {
     background-color: var(--secondary-color);
-    padding: 50px 20px;
+    padding: 0px 20px;
     text-align: center;
 }
 
@@ -340,7 +336,7 @@ body {
 
 .ayurveda-content h1 {
     font-size: 2.5rem;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
     font-family: "Radikal W03 Regular";
     color: var(--text-color);
 }
@@ -349,7 +345,7 @@ body {
     width: 100%;
     max-width: 600px;
     height: auto;
-    margin: 20px 0;
+    margin: 0px 0;
     border-radius: 10px;
 }
 
@@ -364,169 +360,234 @@ body {
 
 /* product section starts here */
 .products-section {
-    padding: 50px 20px;
-    background-color: var(--secondary-color);
+    padding: 0rem 2rem;
 }
-
 .products-heading {
-    text-align: center;
-    font-size: 2.5rem;
+    font-size: 2.75rem;
     color: var(--text-color);
-    margin-bottom: 20px;
+    margin-bottom: 3rem;
+    letter-spacing: 2px;
+    text-align: center;
     font-family: "Radikal W03 Regular";
 }
-
+/* Tabs Navigation */
 .tabs {
     display: flex;
     justify-content: center;
-    margin-bottom: 20px;
+    gap: 1rem;
+    margin-bottom: 2rem;
 }
-
 .tab-link {
-    background-color: #A59833;
-    color: #fff;
+    background: #A69933;
+    color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 1rem 2rem;
+    border-radius: 30px;
     cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
     font-family: "Radikal W03 Regular";
-    font-size: 1em;
-    margin: 0 5px;
-    transition: background-color 0.3s ease;
 }
-
-.tab-link.active {
-    background-color: #cfbe3b;
-}
-
+.tab-link.active,
 .tab-link:hover {
-    background-color: #9a8d28;
+    background: #8a7d2a;
+}
+/* Product Container */
+.product-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+/* Product Grid Layout */
+.product-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    padding: 3rem;
+}
+/* Carousel Styles */
+.product-carousel {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+}
+.carousel-container {
+    position: relative;
+}
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+.carousel-slide {
+    min-width: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+.carousel-slide.active {
+    opacity: 1;
+}
+.carousel-slide img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+/* Carousel Controls */
+.carousel-controls {
+    position: absolute;
+    bottom: -46px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.carousel-arrow {
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.5rem;
+    color: #2c3e50;
+}
+.carousel-arrow:hover {
+    background: white;
+    transform: scale(1.1);
+}
+/* Carousel Dots */
+.carousel-dots {
+    display: flex;
+    gap: 8px;
+}
+.carousel-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.carousel-dot.active {
+    background: #A69933;
+    transform: scale(1.2);
+}
+/* Add to Cart Button */
+.add-to-cart {
+    background: #A69933;
+    color: white;
+    border: none;
+    padding: 12px 2px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
+    font-family: "Radikal W03 Regular";
+    margin-top: 64px;
+    display: block;
+    text-align: center;
+    width: 50%;
+    margin-left: 124px;
+}
+.add-to-cart:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(166, 153, 51, 0.3);
+}
+/* Product Info */
+.product-info {
+    padding: 1rem;
+}
+.product-title {
+    font-size: 2.25rem;
+    color: #A69933;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    font-family: "Radikal W03 Regular";
+}
+.product-description{
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color:#717c5b;
+    font-family: 'Synonym-Variable';
 }
 
+/* Benefits Section */
+.benefits-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    padding: 0px 50px;
+}
+.benefits-section h3 {
+    color: #A69933;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    font-family: "Radikal W03 Regular";
+}
+.benefits-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.benefits-section li {
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-family: 'Synonym-Variable';
+    color: var(--text-color);
+}
+
+/* Style for the big line image */
+.big-line {
+    display: block;
+    width: 100%; /* Adjust width as needed */
+    
+}
+
+.big-line2{
+    margin-top: 37px;
+}
+
+/* Style for the Buy Now button */
+.buy-now {
+    display: block;
+    margin: 0px auto;
+    background-color: #A69933;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    font-family: "Radikal W03 Regular";
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s ease;
+    width: 200px; /* Adjust button width */
+}
+
+.buy-now:hover {
+    background-color: #8a7d2a;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(166, 153, 51, 0.3);
+}
+/* Tab Content Visibility */
 .tab-content {
     display: none;
 }
-
 .tab-content.active {
     display: block;
 }
 
-.product {
-    text-align: center;
-}
-
-.product-image {
-    width: 100%;
-    max-width: 300px;
-    height: auto;
-    border-radius: 10px;
-}
-
-.product-button {
-    margin-top: 10px;
-}
-
-.product-button button {
-    background-color: #A59833;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-family: "Radikal W03 Regular";
-    font-size: 1em;
-}
-
-.product-button button a {
-    color: #fff;
-    text-decoration: none;
-}
-
-.product-description {
-    margin-top: 20px;
-    text-align: left;
-    max-width: 847px;
-    margin: 20px auto;
-}
-
-.product-description h1 {
-    font-size: 2.5rem;
-    color: #A59833;
-    margin-bottom: 10px;
-    font-family: "Radikal W03 Regular";
-}
-
-.product-description p {
-    font-size: 1.2rem;
-    color: #717c5b;
-    line-height: 1.6;
-    font-family: 'Synonym-Variable';
-}
-/* product section ends here */
-
-/* features section starts here */
-.features-section {
-    background-color: var(--secondary-color);
-    padding: 40px 5%;
-    text-align: center;
-    border-radius: 10px;
-}
-
-.features-container {
-    display: flex;
-    justify-content: space-between;
-    gap: 40px;
-    flex-wrap: wrap;
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.feature-box {
-    flex: 1;
-    min-width: 300px;
-    text-align: left;
-}
-
-.feature-box h3 {
-    font-family: "Radikal W03 Regular";
-    color: #a69933;
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.feature-box ul {
-    list-style: none;
-    padding: 0;
-    color:#717c5b;
-    font-size: 16px;
-    font-family: 'Synonym-Variable';
-}
-
-.button-container {
-    margin-top: 20px;
-}
-
-.buy-now {
-    background-color: #A69933; /* Button color */
-    color: white;
-    border: none;
-    padding: 12px 24px;
-    font-size: 16px;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: 0.3s ease-in-out;
-}
-
-.buy-now:hover {
-    background-color: #8C822A;
-}
-/* features section ends here */
+/* product section ends here  */
 
 /* outlet section starts here */
 .outlet-section {
     background-color: var(--secondary-color);
-    padding: 50px 20px;
     text-align: center;
+    padding-bottom: 50px;
 }
 
 .outlet-section h1 {
@@ -878,20 +939,52 @@ input {
         padding: 0 15px;
     }
     
+    .products-section {
+        padding: 0 1rem;
+    }
+    
+    .products-heading {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+    
     .tabs {
         flex-wrap: wrap;
     }
     
     .tab-link {
-        margin: 5px;
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
     }
     
-    .features-container {
-        flex-direction: column;
+    .product-grid {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+        gap: 2rem;
     }
     
-    .feature-box {
-        margin-bottom: 30px;
+    .carousel-slide img {
+        height: 300px;
+    }
+    
+    .add-to-cart {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 3rem;
+    }
+    
+    .benefits-section {
+        grid-template-columns: 1fr;
+        padding: 0 1rem;
+        gap: 2rem;
+    }
+    
+    .product-title {
+        font-size: 1.75rem;
+    }
+    
+    .product-description {
+        font-size: 1rem;
     }
     
     .outlet-section h1 {
@@ -978,10 +1071,12 @@ input {
         font-size: 1rem;
     }
     
-    
-    
     .testimonial-text h3 {
         font-size: 1.1rem;
+    }
+    .testimonial-image{
+        width: 100%;
+        max-width: 400px;
     }
     
     .ayurveda-content h1 {
@@ -992,17 +1087,49 @@ input {
         font-size: 1rem;
     }
     
+    .products-heading {
+        font-size: 1.75rem;
+    }
+    
     .tab-link {
-        padding: 8px 12px;
-        font-size: 0.9em;
+        width: 100%;
+        border-radius: 15px;
     }
     
-    .product-image {
-        max-width: 200px;
+    .carousel-slide img {
+        height: 250px;
     }
     
-    .product-description h1 {
-        font-size: 1.4rem;
+    .carousel-controls {
+        bottom: -40px;
+    }
+    
+    .carousel-arrow {
+        width: 35px;
+        height: 35px;
+        font-size: 1.25rem;
+    }
+    
+    .carousel-dot {
+        width: 10px;
+        height: 10px;
+    }
+    
+    .product-title {
+        font-size: 1.5rem;
+    }
+    
+    .benefits-section h3 {
+        font-size: 1.25rem;
+    }
+    
+    .benefits-section li {
+        font-size: 1rem;
+    }
+    
+    .buy-now {
+        width: 100%;
+        padding: 1rem;
     }
     
     .footer-container {
@@ -1066,14 +1193,14 @@ input {
     }
     
     .testimonial-image img {
-        max-width: 200px;
+        max-width: 300px;
     }
     
     .testimonial-text h3 {
         font-size: 1rem;
     }
     .testimonial-divider{
-        margin-top: 259px;
+        margin-top: 255px;
     }
     
     .signature {
@@ -1100,25 +1227,15 @@ input {
         font-size: 0.8em;
     }
     
-    .product-image {
-        max-width: 180px;
+    .carousel-slide img {
+        height: 300px;
     }
     
-    .product-description h1 {
-        font-size: 1.2rem;
+    .product-title {
+        font-size: 1.3rem;
+        margin-left: 20px;
     }
     
-    .product-description p {
-        font-size: 0.9rem;
-    }
-    
-    .feature-box h3 {
-        font-size: 1.2rem;
-    }
-    
-    .feature-box ul {
-        font-size: 0.9rem;
-    }
     
     .outlet-section h1 {
         font-size: 1.5rem;
@@ -1181,13 +1298,29 @@ input {
         width: 100%;
     }
     
-    .product-image {
-        max-width: 150px;
+    .product-description h1 {
+        font-size: 1.2rem;
     }
-    
-    .product-button button {
-        padding: 8px 16px;
-        font-size: 0.9em;
+
+    .product-description p {
+        font-size: 0.85rem;
+    }
+
+    .benefits-section {
+        padding: 0.5rem;
+    }
+
+    .benefits-section h3 {
+        font-size: 1.2rem;
+    }
+
+    .benefits-section ul {
+        font-size: 0.85rem;
+    }
+
+    .add-to-cart {
+        font-size: 0.85rem;
+        padding: 0.6rem;
     }
     
     .buy-now {

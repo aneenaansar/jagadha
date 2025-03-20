@@ -28,9 +28,9 @@ document.addEventListener('DOMContentLoaded', () => {
   
     // Elements with special animations
     const specialElements = {
-      '.story-image:first-child': 'rotate-in-left',
-      '.story-image:nth-child(2)': 'pop-in',
-      '.story-image:last-child': 'rotate-in-right',
+      // '.story-image:first-child': 'rotate-in-left',
+      // '.story-image:nth-child(2)': 'pop-in',
+      // '.story-image:last-child': 'rotate-in-right',
       '.product-image': 'slide-in-left',
       '.product-description': 'slide-in-right',
       '.testimonial-image': 'slide-in-left',
@@ -303,38 +303,85 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   // Add this to your existing script.js file
-document.addEventListener('DOMContentLoaded', () => {
-  const tabLinks = document.querySelectorAll('.tab-link');
-  const tabContents = document.querySelectorAll('.tab-content');
-
-  tabLinks.forEach(link => {
-      link.addEventListener('click', () => {
-          const tabId = link.getAttribute('data-tab');
-
-          tabLinks.forEach(link => link.classList.remove('active'));
-          tabContents.forEach(content => content.classList.remove('active'));
-
-          link.classList.add('active');
-          document.getElementById(tabId).classList.add('active');
-      });
-  });
-});
-
-/* JavaScript for mobile menu toggle */
-
-// Add this to your JavaScript file
-document.addEventListener('DOMContentLoaded', function() {
-    const mobileMenuToggle = document.createElement('div');
-    mobileMenuToggle.className = 'mobile-menu-toggle';
-    mobileMenuToggle.innerHTML = '☰';
+  document.addEventListener('DOMContentLoaded', () => {
+    // Tab Functionality
+    const tabs = document.querySelectorAll('.tab-link');
+    const tabContents = document.querySelectorAll('.tab-content');
     
-    const header = document.querySelector('.header');
-    const nav = document.querySelector('.nav');
-    
-    header.insertBefore(mobileMenuToggle, nav);
-    
-    mobileMenuToggle.addEventListener('click', function() {
-        nav.classList.toggle('active');
-        this.innerHTML = nav.classList.contains('active') ? '✕' : '☰';
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            // Remove active class from all tabs and tab contents
+            tabs.forEach(t => t.classList.remove('active'));
+            tabContents.forEach(content => content.classList.remove('active'));
+            
+            // Add active class to the clicked tab
+            tab.classList.add('active');
+            
+            // Find corresponding tab content and make it active
+            const targetTabId = tab.getAttribute('data-tab');
+            const targetTabContent = document.getElementById(targetTabId);
+            if (targetTabContent) {
+                targetTabContent.classList.add('active');
+            }
+        });
     });
+
+    // Carousel Functionality
+    function initializeCarousels() {
+        document.querySelectorAll('.carousel-container').forEach(container => {
+            const track = container.querySelector('.carousel-track');
+            const slides = Array.from(track.children);
+            const dotsContainer = container.querySelector('.carousel-dots');
+            const prevButton = container.querySelector('.prev');
+            const nextButton = container.querySelector('.next');
+           
+            let currentIndex = 0;
+           
+            // Create dots for each slide
+            slides.forEach((_, index) => {
+                const dot = document.createElement('div');
+                dot.classList.add('carousel-dot');
+                if (index === 0) dot.classList.add('active');
+                
+                dot.addEventListener('click', () => {
+                    currentIndex = index;
+                    updateCarousel();
+                });
+                
+                dotsContainer.appendChild(dot);
+            });
+           
+            // Update carousel based on current index
+            function updateCarousel() {
+                slides.forEach((slide, index) => {
+                    slide.classList.toggle('active', index === currentIndex);
+                });
+               
+                dotsContainer.querySelectorAll('.carousel-dot').forEach((dot, index) => {
+                    dot.classList.toggle('active', index === currentIndex);
+                });
+            }
+           
+            // Handle previous button click
+            prevButton.addEventListener('click', () => {
+                currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+                updateCarousel();
+            });
+           
+            // Handle next button click
+            nextButton.addEventListener('click', () => {
+                currentIndex = (currentIndex + 1) % slides.length;
+                updateCarousel();
+            });
+           
+            // Auto-advance slides every 5 seconds
+            setInterval(() => {
+                currentIndex = (currentIndex + 1) % slides.length;
+                updateCarousel();
+            }, 5000);
+        });
+    }
+
+    // Initialize all carousels
+    initializeCarousels();
 });

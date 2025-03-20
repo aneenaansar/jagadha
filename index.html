@@ -36,8 +36,8 @@
 
     <!-- hero section starts here -->
     <section class="hero-section">
-        <div class="carousel">
-            <div class="carousel-slide">
+        <div>
+            <div >
                 <img src="./assets/hero_image.png" alt="Hero Image 1" class="hero-image">
                 <div class="hero-text ">
                     <p>Results-driven skin and hair care through Ayurveda.</p>
@@ -120,97 +120,281 @@
     </section>
     <!-- Ayurveda section ends here -->
 
-    <!-- products section starts here  -->
+
+    <!-- product section starts here  -->
     <section class="products-section">
         <h2 class="products-heading">Our Products</h2>
+        
+        <!-- Product Tabs -->
         <div class="tabs">
             <button class="tab-link active" data-tab="product1">AGNIJITH</button>
             <button class="tab-link" data-tab="product2">AGNIHARI</button>
             <button class="tab-link" data-tab="product3">KADAMBINI</button>
             <button class="tab-link" data-tab="product4">KASHMIRINI</button>
         </div>
-        <div class="tab-content active" id="product1">
-            <div class="product">
-                <img src="./assets/product.png" alt="Product Image" class="product-image">
-                <div class="product-button">
-                    <button><a href="#">ADD TO CART</a></button>
-                </div>
-            </div>
-            <div class="product-description">
-                <h1>Experience the transformative power of Agnijith and rediscover smooth, scar-free skin.</h1>
-                <p>Experience the power of Ayurveda with Agnijith—a luxurious daily rejuvenating cream designed to nourish, protect, and revitalize your skin. This time-tested formula helps restore your skin's natural glow while shielding it from environmental stressors. Regular use promotes a smooth, scar-free complexion, making it an essential addition to your skincare routine.</p>
-            </div>
-        </div>
-        <div class="tab-content" id="product2">
-            <div class="product">
-                <img src="./assets/product2.png" alt="Product Image" class="product-image">
-                <div class="product-button">
-                    <button><a href="#">ADD TO CART</a></button>
-                </div>
-            </div>
-            <div class="product-description">
-                <h1>Product 2 Description</h1>
-                <p>Details about Product 2.</p>
-            </div>
-        </div>
-        <div class="tab-content" id="product3">
-            <div class="product">
-                <img src="./assets/product3.png" alt="Product Image" class="product-image">
-                <div class="product-button">
-                    <button><a href="#">ADD TO CART</a></button>
-                </div>
-            </div>
-            <div class="product-description">
-                <h1>Product 3 Description</h1>
-                <p>Details about Product 3.</p>
-            </div>
-        </div>
-        <div class="tab-content" id="product4">
-            <div class="product">
-                <img src="./assets/product4.png" alt="Product Image" class="product-image">
-                <div class="product-button">
-                    <button><a href="#">ADD TO CART</a></button>
-                </div>
-            </div>
-            <div class="product-description">
-                <h1>Product 4 Description</h1>
-                <p>Details about Product 4</p>
-            </div>
-        </div>
-    </section>
-    <!-- product section ends here -->
 
-    <!-- feature section starts here -->
-    <section class="features-section">
-        <img src="./assets/big_line.svg" alt="">
-        <div class="features-container">
-            <div class="feature-box">
-                <h3>Applications of Agnijith</h3>
-                <ul>
-                    <li>✅ Burns & Burn Scars</li>
-                    <li>✅ Keloids & Surgical Scars</li>
-                    <li>✅ Sunburn & Skin Irritation</li>
-                    <li>✅ Chickenpox Scars & Old Wounds</li>
-                    <li>✅ Diabetic Ulcers & Non-Healing Wounds</li>
-                    <li>✅ Leukoderma (Vitiligo), Psoriasis & Eczema</li>
-                    <li>✅ General Itching & Wound Care</li>
-                </ul>
-            </div>
-            <div class="feature-box">
-                <h3>Key benefits of Agnijith</h3>
-                <ul>
-                    <li>✅ Accelerates Healing – Speeds up the recovery process for burns and wounds.</li>
-                    <li>✅ Reduces Scarring – Clinically proven to minimize the appearance of scars.</li>
-                    <li>✅ Safe for All Ages – Gentle and effective, making it a must-have for families, especially those with young children prone to minor accidents.</li>
-                </ul>
+        <!-- Product 1 Content -->
+        <div class="tab-content active" id="product1">
+            <div class="product-container">
+                <div class="product-grid">
+                    <!-- Image Carousel -->
+                    <div class="product-carousel">
+                        <div class="carousel-container">
+                            <div class="carousel-track">
+                                <div class="carousel-slide active">
+                                    <img src="./assets/product.png" alt="Agnijith Product">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="product1-2.jpg" alt="Agnijith Application">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="product1-3.jpg" alt="Agnijith Benefits">
+                                </div>
+                            </div>
+                            <div class="carousel-controls">
+                                <button class="carousel-arrow prev">‹</button>
+                                <div class="carousel-dots"></div>
+                                <button class="carousel-arrow next">›</button>
+                            </div>
+                        </div>
+                        <button class="add-to-cart">
+                            Add to Cart
+                        </button>
+                    </div>
+
+                    <!-- Product Information -->
+                    <div class="product-info">
+                        <h1 class="product-title">Experience the transformative power of Agnijith and rediscover smooth, scar-free skin.</h1>
+                        <div class="product-description">
+                            <p>Experience the power of Ayurveda with Agnijith—a luxurious daily rejuvenating cream designed to nourish, protect, and revitalize your skin. This time-tested formula helps restore your skin's natural glow while shielding it from environmental stressors. Regular use promotes a smooth, scar-free complexion, making it an essential addition to your skincare routine.</p>
+                        </div>
+                    </div>
+                </div>
+                <img src="./assets/big_line.svg" alt="Divider" class="big-line">
+                <!-- Benefits Section -->
+                <div class="benefits-section">
+                    <div class="benefits-column">
+                        <h3>Applications of Agnijith</h3>
+                        <ul>
+                            <li>✅ Burns & Burn Scars</li>
+                            <li>✅ Keloids & Surgical Scars</li>
+                            <li>✅ Sunburn & Skin Irritation</li>
+                            <li>✅ Chickenpox Scars & Old Wounds</li>
+                            <li>✅ Diabetic Ulcers & Non-Healing Wounds</li>
+                            <li>✅ Leukoderma (Vitiligo), Psoriasis & Eczema</li>
+                            <li>✅ General Itching & Wound Care</li>
+                        </ul>
+                    </div>
+                    <div class="benefits-column">
+                        <h3>Key Benefits of Agnijith</h3>
+                        <ul>
+                            <li>✅ Accelerates Healing – Speeds up the recovery process for burns and wounds.</li>
+                            <li>✅ Reduces Scarring – Clinically proven to minimize the appearance of scars.</li>
+                            <li>✅ Safe for All Ages – Gentle and effective, making it a must-have for families, especially those with young children prone to minor accidents.</li>
+                        </ul>
+                    </div>
+                </div>
+                <img src="./assets/big_line.svg" alt="Divider" class="big-line2">
+                <button class="buy-now">Buy Now</button>
             </div>
         </div>
-        <img src="./assets/big_line.svg" alt="">
-        <div class="button-container">
-            <button class="buy-now">BUY NOW</button>
+
+        <!-- Product 2 Content -->
+        <div class="tab-content" id="product2">
+            <div class="product-container">
+                <div class="product-grid">
+                    <!-- Image Carousel -->
+                    <div class="product-carousel">
+                        <div class="carousel-container">
+                            <div class="carousel-track">
+                                <div class="carousel-slide active">
+                                    <img src="./assets/product.png" alt="Agnihari Product">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="product2-2.jpg" alt="Agnihari Application">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="product2-3.jpg" alt="Agnihari Benefits">
+                                </div>
+                            </div>
+                            <div class="carousel-controls">
+                                <button class="carousel-arrow prev">‹</button>
+                                <div class="carousel-dots"></div>
+                                <button class="carousel-arrow next">›</button>
+                            </div>
+                        </div>
+                        <button class="add-to-cart">
+                            Add to Cart
+                        </button>
+                    </div>
+
+                    <!-- Product Information -->
+                    <div class="product-info">
+                        <h1 class="product-title">Agnihari: Rejuvenate and protect your skin naturally.</h1>
+                        <div class="product-description">
+                            <p>Agnihari is a powerful Ayurvedic formulation designed to rejuvenate and protect your skin. Its natural ingredients work together to provide hydration, reduce inflammation, and promote a youthful glow.</p>
+                        </div>
+                    </div>
+                </div>
+                <img src="./assets/big_line.svg" alt="Divider" class="big-line">
+                <!-- Benefits Section -->
+                <div class="benefits-section">
+                    <div class="benefits-column">
+                        <h3>Applications of Agnihari</h3>
+                        <ul>
+                            <li>✅ Burns & Burn Scars</li>
+                            <li>✅ Keloids & Surgical Scars</li>
+                            <li>✅ Sunburn & Skin Irritation</li>
+                            <li>✅ Chickenpox Scars & Old Wounds</li>
+                            <li>✅ Diabetic Ulcers & Non-Healing Wounds</li>
+                            <li>✅ Leukoderma (Vitiligo), Psoriasis & Eczema</li>
+                            <li>✅ General Itching & Wound Care</li>
+                        </ul>
+                    </div>
+                    <div class="benefits-column">
+                        <h3>Key Benefits of Agnihari</h3>
+                        <ul>
+                            <li>✅ Accelerates Healing – Speeds up the recovery process for burns and wounds.</li>
+                            <li>✅ Reduces Scarring – Clinically proven to minimize the appearance of scars.</li>
+                            <li>✅ Safe for All Ages – Gentle and effective, making it a must-have for families, especially those with young children prone to minor accidents.</li>
+                        </ul>
+                    </div>
+                </div>
+                <img src="./assets/big_line.svg" alt="Divider" class="big-line2">
+            </div>
+        </div>
+
+        <!-- Product 3 Content -->
+        <div class="tab-content" id="product3">
+            <div class="product-container">
+                <div class="product-grid">
+                    <!-- Image Carousel -->
+                    <div class="product-carousel">
+                        <div class="carousel-container">
+                            <div class="carousel-track">
+                                <div class="carousel-slide active">
+                                    <img src="./assets/product3.png" alt="Kadambini Product">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="product3-2.jpg" alt="Kadambini Application">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="product3-3.jpg" alt="Kadambini Benefits">
+                                </div>
+                            </div>
+                            <div class="carousel-controls">
+                                <button class="carousel-arrow prev">‹</button>
+                                <div class="carousel-dots"></div>
+                                <button class="carousel-arrow next">›</button>
+                            </div>
+                        </div>
+                        <button class="add-to-cart">
+                            Add to Cart
+                        </button>
+                    </div>
+
+                    <!-- Product Information -->
+                    <div class="product-info">
+                        <h1 class="product-title">Kadambini: Nourish and strengthen your hair naturally.</h1>
+                        <div class="product-description">
+                            <p>Kadambini is an Ayurvedic hair care product that strengthens hair roots, reduces hair fall, and promotes healthy hair growth. Its natural ingredients ensure your hair stays nourished and shiny.</p>
+                        </div>
+                    </div>
+                </div>
+                <img src="./assets/big_line.svg" alt="Divider" class="big-line">
+                <!-- Benefits Section -->
+                <div class="benefits-section">
+                    <div class="benefits-column">
+                        <h3>Applications of Kadambini</h3>
+                        <ul>
+                            <li>✅ Burns & Burn Scars</li>
+                            <li>✅ Keloids & Surgical Scars</li>
+                            <li>✅ Sunburn & Skin Irritation</li>
+                            <li>✅ Chickenpox Scars & Old Wounds</li>
+                            <li>✅ Diabetic Ulcers & Non-Healing Wounds</li>
+                            <li>✅ Leukoderma (Vitiligo), Psoriasis & Eczema</li>
+                            <li>✅ General Itching & Wound Care</li>
+                        </ul>
+                    </div>
+                    <div class="benefits-column">
+                        <h3>Key Benefits of Kadambini</h3>
+                        <ul>
+                            <li>✅ Accelerates Healing – Speeds up the recovery process for burns and wounds.</li>
+                            <li>✅ Reduces Scarring – Clinically proven to minimize the appearance of scars.</li>
+                            <li>✅ Safe for All Ages – Gentle and effective, making it a must-have for families, especially those with young children prone to minor accidents.</li>
+                        </ul>
+                    </div>
+                </div>
+                <img src="./assets/big_line.svg" alt="Divider" class="big-line2">
+            </div>
+        </div>
+
+        <!-- Product 4 Content -->
+        <div class="tab-content" id="product4">
+            <div class="product-container">
+                <div class="product-grid">
+                    <!-- Image Carousel -->
+                    <div class="product-carousel">
+                        <div class="carousel-container">
+                            <div class="carousel-track">
+                                <div class="carousel-slide active">
+                                    <img src="./assets/product4.png" alt="Kashmirini Product">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="product4-2.jpg" alt="Kashmirini Application">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="product4-3.jpg" alt="Kashmirini Benefits">
+                                </div>
+                            </div>
+                            <div class="carousel-controls">
+                                <button class="carousel-arrow prev">‹</button>
+                                <div class="carousel-dots"></div>
+                                <button class="carousel-arrow next">›</button>
+                            </div>
+                        </div>
+                        <button class="add-to-cart">
+                            Add to Cart
+                        </button>
+                    </div>
+
+                    <!-- Product Information -->
+                    <div class="product-info">
+                        <h1 class="product-title">Kashmirini: The ultimate care for your skin and hair.</h1>
+                        <div class="product-description">
+                            <p>Kashmirini is a versatile Ayurvedic product that offers benefits for both skin and hair. Its unique formulation ensures hydration, nourishment, and protection from environmental damage.</p>
+                        </div>
+                    </div>
+                </div>
+                <img src="./assets/big_line.svg" alt="Divider" class="big-line">
+                <!-- Benefits Section -->
+                <div class="benefits-section">
+                    <div class="benefits-column">
+                        <h3>Applications of Kashmirini</h3>
+                        <ul>
+                            <li>✅ Burns & Burn Scars</li>
+                            <li>✅ Keloids & Surgical Scars</li>
+                            <li>✅ Sunburn & Skin Irritation</li>
+                            <li>✅ Chickenpox Scars & Old Wounds</li>
+                            <li>✅ Diabetic Ulcers & Non-Healing Wounds</li>
+                            <li>✅ Leukoderma (Vitiligo), Psoriasis & Eczema</li>
+                            <li>✅ General Itching & Wound Care</li>
+                        </ul>
+                    </div>
+                    <div class="benefits-column">
+                        <h3>Key Benefits of Kashmirini</h3>
+                        <ul>
+                            <li>✅ Accelerates Healing – Speeds up the recovery process for burns and wounds.</li>
+                            <li>✅ Reduces Scarring – Clinically proven to minimize the appearance of scars.</li>
+                            <li>✅ Safe for All Ages – Gentle and effective, making it a must-have for families, especially those with young children prone to minor accidents.</li>
+                        </ul>
+                    </div>
+                </div>
+                <img src="./assets/big_line.svg" alt="Divider" class="big-line2">
+            </div>
         </div>
     </section>
-    <!-- feature section ends here -->
+    <!-- product section ends here  -->
 
     <!-- outlet section starts here -->
     <section class="outlet-section">
