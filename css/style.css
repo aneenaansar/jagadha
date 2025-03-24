@@ -1170,7 +1170,9 @@ input {
         top: 50%;
         padding: 0 10px;
     }
-    
+    .small-image {
+        width: 100%;
+    }
     .centered-section p {
         font-size: 0.9rem;
     }
@@ -1200,6 +1202,7 @@ input {
     }
     .testimonial-divider{
         margin-top: 255px;
+        width: 100%;
     }
     
     .signature {

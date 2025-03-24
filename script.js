@@ -310,7 +310,6 @@ document.addEventListener('DOMContentLoaded', () => {
     
     tabs.forEach(tab => {
         tab.addEventListener('click', () => {
-            // Remove active class from all tabs and tab contents
             tabs.forEach(t => t.classList.remove('active'));
             tabContents.forEach(content => content.classList.remove('active'));
             
